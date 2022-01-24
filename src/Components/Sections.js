@@ -1,20 +1,27 @@
 import styled from "styled-components";
-function Sections(){
+import Fade from 'react-reveal/Fade';
+function Sections({title, description, leftBtnText , rightBtnText , backgroundImg}){
     return(
-        <Wrap>
+        <Wrap bgImg={backgroundImg}>
+            <Fade bottom>
            <ItemText>
-               <h1>Model S</h1>
-               <p>Order Online for Touchless Delivery</p>
+               <h1>{title}</h1>
+               <p>{description}</p>
            </ItemText>
+            </Fade>
            <Buttons>
+               <Fade bottom>
            <ButtonGroup>
                <LeftButton>
-                  Custom Order
+                  {leftBtnText}
                </LeftButton>
+               {rightBtnText &&
                <RightButton>
-                    Existing Inventory
+                    {rightBtnText}
                </RightButton>
+               }
            </ButtonGroup>
+           </Fade>
            <DownArrow src="./images/down-arrow.svg"></DownArrow>
            </Buttons>
         </Wrap>
@@ -23,6 +30,7 @@ function Sections(){
 export default Sections;
 
 const Wrap = styled.div`
+z-index:10;
 width:100vw;
 height:100vh;
 background-image:url('/images/model-s.jpg');
@@ -33,6 +41,8 @@ display:flex;
 flex-direction:column;
 justify-content:space-between;
 align-items:center;
+background-image: ${props => `url('images/${props.bgImg}')`};
+
 `
 
 const ItemText = styled.div`
@@ -42,6 +52,9 @@ padding-top:15vh
 const ButtonGroup= styled.div`
 display:flex;
 margin-bottom:30px;
+@media (max-width:768px){
+    flex-direction:column;
+}
 `
 
 const LeftButton = styled.div`
@@ -61,7 +74,11 @@ margin:8px;
 
 `
 
-const RightButton = styled(LeftButton)``
+const RightButton = styled(LeftButton)`
+background:white;
+opacity:0.64;
+color:black;
+`
 
 const DownArrow= styled.img`
 height:40px;

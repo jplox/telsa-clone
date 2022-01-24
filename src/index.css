@@ -23,3 +23,15 @@ body{
     transform: translateY(3px);
   }
 }
+
+a{
+  text-decoration: none;
+}
+.bi-list{
+  font-size:25px;
+  cursor: pointer;
+}
+.bi-x{
+  font-size: 30px;
+  cursor: pointer;
+}

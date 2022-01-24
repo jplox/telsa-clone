@@ -6,7 +6,7 @@ import TopBar from './Components/TopBar';
 function App() {
   return (
     <div className="App">
-      {/* <TopBar></TopBar> */}
+      <TopBar></TopBar>
       <Home></Home>
     </div>
   );
