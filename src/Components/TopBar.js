@@ -40,7 +40,13 @@ function TopBar() {
           <a href="#">Roaster</a>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <a href="#">Model- S</a>
+        </li>
+        <li>
+          <a href="#">Model- Y</a>
+        </li>
+        <li>
+          <a href="#">Model- 3</a>
         </li>
       </BurgerNavMenu>
     </Container>
@@ -102,6 +108,7 @@ const BurgerNavMenu = styled.div`
   flex-direction: column;
   text-align: start;
   transform : ${props => props.show ? 'translateX(0%)' : 'translateX(100%)'};
+  transition : transform 0.3s ease-in;
   li {
     padding: 15px 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
